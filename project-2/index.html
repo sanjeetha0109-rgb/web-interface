@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile Card</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="icon">🎓</div>
+            <h2>Student Profile</h2>
+            <p>Enter Student Details</p>
+        </div>
+
+        <div class="form">
+
+            <input type="text" id="name"
+                   placeholder="Student Name">
+
+            <input type="text" id="roll"
+                   placeholder="Roll Number">
+
+            <input type="number" id="mark"
+                   placeholder="Mark (0 - 100)">
+
+            <button onclick="displayProfile()">
+                Display Profile
+            </button>
+
+            <div class="profile">
+
+                <h3>Student Details</h3>
+
+                <p>
+                    <b>Name:</b>
+                    <span id="sname">---</span>
+                </p>
+
+                <p>
+                    <b>Roll Number:</b>
+                    <span id="sroll">---</span>
+                </p>
+
+                <p>
+                    <b>Mark:</b>
+                    <span id="smark">---</span>
+                </p>
+
+                <p>
+                    <b>Grade:</b>
+                    <span id="grade">---</span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

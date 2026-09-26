@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #080b1c;
+}
+
+/* Main Section */
+.hobbies-section {
+  min-height: 100vh;
+  padding: 55px 30px;
+  background: radial-gradient(
+    circle at top,
+    #202354 0%,
+    #0d1129 45%,
+    #080b1c 100%
+  );
+  color: white;
+}
+
+/* Header */
+.hobbies-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.passion-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  margin-bottom: 18px;
+  border-radius: 30px;
+  background: rgba(180, 70, 255, 0.18);
+  border: 1px solid rgba(220, 100, 255, 0.3);
+  color: #ff70c8;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hobbies-header h1 {
+  font-size: 48px;
+  font-weight: 750;
+  letter-spacing: 1px;
+}
+
+.hobbies-header h1 span {
+  color: #d348ff;
+}
+
+.hobbies-header h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 10px auto 12px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    #8b4dff,
+    #ff45c8
+  );
+}
+
+.hobbies-header p {
+  color: #aeb4d1;
+  font-size: 17px;
+}
+
+/* Grid */
+.hobbies-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* Card */
+.hobby-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  background: rgba(28, 34, 67, 0.85);
+  border: 1px solid rgba(145, 153, 210, 0.3);
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  opacity: 0;
+  animation: cardAppear 0.6s ease forwards;
+}
+
+.hobby-card:hover {
+  transform: translateY(-7px);
+  border-color: #b74cff;
+  box-shadow:
+    0 15px 35px rgba(163, 65, 255, 0.25);
+}
+
+/* Icon */
+.icon-circle {
+  min-width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #7b35e8,
+    #d348ff
+  );
+
+  font-size: 34px;
+
+  box-shadow:
+    0 0 20px rgba(188, 66, 255, 0.35);
+
+  transition: transform 0.3s ease;
+}
+
+.hobby-card:hover .icon-circle {
+  transform: rotate(8deg) scale(1.08);
+}
+
+/* Content */
+.hobby-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hobby-content h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.small-line {
+  width: 40px;
+  height: 3px;
+  border-radius: 5px;
+  background: #d348ff;
+  margin-bottom: 12px;
+  transition: width 0.3s ease;
+}
+
+.hobby-card:hover .small-line {
+  width: 65px;
+}
+
+.hobby-content p {
+  color: #b8bdd3;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* Card Glow */
+.hobby-card::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: -45px;
+  top: -45px;
+  border-radius: 50%;
+  background: rgba(208, 62, 255, 0.25);
+  filter: blur(15px);
+}
+
+/* Footer */
+.hobbies-footer {
+  text-align: center;
+  margin-top: 45px;
+  color: #aeb4d1;
+  font-size: 17px;
+}
+
+/* Animation */
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 950px) {
+  .hobbies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hobbies-section {
+    padding: 40px 18px;
+  }
+
+  .hobbies-header h1 {
+    font-size: 38px;
+  }
+
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-card {
+    min-height: 160px;
+  }
+
+  .icon-circle {
+    min-width: 62px;
+    height: 62px;
+    font-size: 28px;
+  }
+}

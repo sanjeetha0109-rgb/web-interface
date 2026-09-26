@@ -1,0 +1,91 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f4f7fb;
+  color: #222;
+}
+
+nav {
+  background: #263b80;
+  color: white;
+  padding: 15px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  margin-left: 25px;
+  text-decoration: none;
+}
+
+main { padding: 40px 8%; min-height: 80vh; }
+
+h1 { color: #263b80; }
+
+.home { text-align: center; }
+
+section {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+section > div, .card, .report {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #ddd;
+}
+
+.card { width: 30%; }
+
+.btn {
+  display: inline-block;
+  background: #263b80;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+.report {
+  max-width: 800px;
+  margin: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background: #263b80;
+  color: white;
+}
+
+.pass { color: green; }
+
+footer {
+  background: #263b80;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 700px) {
+  section { flex-direction: column; }
+  .card { width: 100%; }
+}

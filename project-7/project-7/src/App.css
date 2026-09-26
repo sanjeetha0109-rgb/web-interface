@@ -1,0 +1,538 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #29213e;
+  background: #f7f5ff;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 55px;
+  padding: 0 8%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #21183f;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #a66cff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home-page {
+  height: calc(100vh - 55px);
+  padding: 0 3%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(
+    135deg,
+    #f8f6ff,
+    #eee8ff
+  );
+}
+
+.home-content {
+  max-width: 620px;
+}
+
+.welcome {
+  color: #743bd1;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.home-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.home-content h1 span {
+  color: #7b42d6;
+}
+
+.home-content h2 {
+  font-size: 20px;
+  color: #51486b;
+  margin-bottom: 25px;
+}
+
+.home-description {
+  max-width: 600px;
+
+  color: #625b76;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.skill-btn,
+.about-btn {
+  padding: 11px 20px;
+  border-radius: 6px;
+
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.skill-btn {
+  background: #7b42d6;
+  color: white;
+}
+
+.about-btn {
+  color: #7b42d6;
+  border: 1px solid #7b42d6;
+}
+
+
+/* PROFILE CARD */
+
+.profile-card {
+  width: 235px;
+  padding: 28px;
+
+  margin-right: 7%;
+
+  text-align: center;
+
+  background: white;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 15px 35px rgba(80, 50, 130, 0.12);
+}
+
+.profile-circle {
+  width: 100px;
+  height: 100px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #7b42d6,
+    #ad6df0
+  );
+
+  color: white;
+
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.profile-card h3 {
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.profile-card p {
+  color: #756c8d;
+  font-size: 12px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-page {
+  min-height: calc(100vh - 55px);
+
+  padding: 8px 0.5%;
+
+  background: #f7f5ff;
+}
+
+.about-heading {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.about-heading p {
+  color: #743bd1;
+
+  font-size: 7px;
+  font-weight: bold;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 2px;
+}
+
+.about-heading h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.heading-line {
+  width: 32px;
+  height: 2px;
+
+  background: #7b42d6;
+
+  margin: 3px auto;
+}
+
+
+/* ABOUT CONTAINER */
+
+.about-container {
+  display: flex;
+  gap: 15px;
+}
+
+
+/* LEFT ABOUT CARD */
+
+.about-left {
+  width: 50%;
+
+  padding: 12px 15px;
+
+  background: white;
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 4px 15px rgba(70, 40, 120, 0.08);
+}
+
+.about-left h2 {
+  color: #7b42d6;
+
+  font-size: 14px;
+
+  margin-bottom: 7px;
+}
+
+.about-left p {
+  color: #625b76;
+
+  font-size: 8px;
+
+  line-height: 1.45;
+
+  margin-bottom: 8px;
+}
+
+
+/* RIGHT */
+
+.about-right {
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.about-box {
+  min-height: 38px;
+
+  padding: 6px 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  background: white;
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 4px 12px rgba(70, 40, 120, 0.08);
+}
+
+.about-icon {
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eee6ff;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+}
+
+.about-box h3 {
+  color: #7b42d6;
+
+  font-size: 9px;
+
+  margin-bottom: 2px;
+}
+
+.about-box p {
+  color: #625b76;
+
+  font-size: 7px;
+
+  line-height: 1.3;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-page {
+  min-height: calc(100vh - 55px);
+
+  padding: 8px 8%;
+
+  background: #f7f5ff;
+}
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.contact-heading h1 {
+  font-size: 24px;
+}
+
+.contact-container {
+  max-width: 680px;
+
+  margin: auto;
+
+  display: flex;
+
+  gap: 20px;
+}
+
+
+/* LEFT CONTACT */
+
+.contact-left {
+  width: 50%;
+
+  padding: 14px 16px;
+
+  background: white;
+
+  border-radius: 7px;
+
+  box-shadow:
+    0 5px 15px rgba(70, 40, 120, 0.08);
+}
+
+.contact-left h2 {
+  color: #7b42d6;
+
+  font-size: 16px;
+
+  margin-bottom: 8px;
+}
+
+.contact-description {
+  color: #625b76;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+
+  margin-bottom: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 10px;
+}
+
+.contact-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eee6ff;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+}
+
+.contact-item h3 {
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+
+.contact-item p {
+  color: #625b76;
+  font-size: 8px;
+}
+
+
+/* CONTACT FORM */
+
+.contact-right {
+  width: 50%;
+
+  padding: 14px 16px;
+
+  background: white;
+
+  border-radius: 7px;
+
+  box-shadow:
+    0 5px 15px rgba(70, 40, 120, 0.08);
+}
+
+.contact-right input,
+.contact-right textarea {
+  width: 100%;
+
+  padding: 8px;
+
+  margin-bottom: 8px;
+
+  border: 1px solid #ddd5ee;
+
+  border-radius: 5px;
+
+  outline: none;
+
+  font-size: 9px;
+}
+
+.contact-right textarea {
+  height: 65px;
+
+  resize: none;
+}
+
+.contact-right button {
+  width: 100%;
+
+  padding: 9px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background: #7b42d6;
+
+  color: white;
+
+  font-size: 9px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.contact-right button:hover {
+  background: #6233b5;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .home-page {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .home-content h1 {
+    font-size: 38px;
+  }
+
+  .home-buttons {
+    justify-content: center;
+  }
+
+  .profile-card {
+    margin-right: 0;
+  }
+
+  .about-container,
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .about-left,
+  .about-right,
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+
+}
