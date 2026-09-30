@@ -9,6 +9,13 @@ With Node.js 22 installed, run this from the repository root:
 ```sh
 node scripts/build-pages.mjs
 ```
+🚀 Live Project
+
+This repository contains my collection of 10 web development projects, built using technologies such as HTML, CSS, JavaScript, React, and Vite. The projects demonstrate my practical skills in frontend development, responsive UI design, React applications, and interactive web experiences. All projects are organized and accessible through a single public deployment for easy viewing and exploration.
+
+🔗 Live Website: https://webinterface-teal.vercel.app/#projects
+
+You can explore all my projects, view their individual features, and see my progress in web development and modern frontend technologies.
 
 The script runs `npm ci` and `npm run build -- --base ./` for each React/Vite project, then stages all ten projects in `dist/`. The two HTML/CSS/JavaScript projects are copied without modifying their source. The `dist/` folder is generated output and should not be committed.
 
