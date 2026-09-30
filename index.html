@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content="A collection of ten web projects by Sanjeetha." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+    <title>My Web Projects</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --navy: #0f172a;
+        --blue: #2563eb;
+        --purple: #7c3aed;
+        --pink: #ec4899;
+        --cyan: #06b6d4;
+        --green: #10b981;
+        --yellow: #f59e0b;
+        --ink: #172033;
+        --muted: #596579;
+        --paper: #f6f8ff;
+        font-family: "DM Sans", sans-serif;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        scroll-behavior: smooth;
+      }
+
+      * { box-sizing: border-box; }
+      body { min-width: 320px; margin: 0; color: var(--ink); background: var(--paper); }
+      a { color: inherit; }
+      .wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+
+      .site-header { color: white; background: var(--navy); }
+      .nav-row { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 28px; }
+      .brand { flex: 0 0 auto; color: white; font-size: 16px; font-weight: 700; text-decoration: none; }
+      .brand span { color: #f9a8d4; }
+      .nav-links { display: flex; align-items: center; gap: 30px; }
+      .nav-links a { color: #dce4f5; font-size: 13px; font-weight: 600; text-decoration: none; transition: color 150ms ease; }
+      .nav-links a:hover, .nav-links a:focus-visible { color: white; }
+      .nav-github { padding: 10px 15px; border: 1px solid #64748b; border-radius: 8px; color: white; font-size: 12px; font-weight: 700; text-decoration: none; }
+      .nav-github:hover { background: #24314d; }
+
+      .hero { position: relative; overflow: hidden; color: white; background: linear-gradient(116deg, #2563eb 0%, #6341dc 53%, #d946a6 100%); }
+      .hero::before { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, transparent 0 42px, #ffffff0b 42px 44px); content: ""; pointer-events: none; }
+      .hero-grid { position: relative; display: grid; grid-template-columns: 1.04fr 0.96fr; gap: 50px; align-items: center; min-height: 510px; padding: 70px 0 76px; }
+      .hero-copy { max-width: 590px; }
+      .eyebrow { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 22px; color: #e0f2fe; font-size: 11px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+      .eyebrow::before { width: 20px; height: 2px; background: #67e8f9; content: ""; }
+      h1 { max-width: 590px; margin: 0; font-family: "Fraunces", Georgia, serif; font-size: 64px; font-weight: 500; line-height: 1.03; }
+      .hero-copy > p { max-width: 470px; margin: 20px 0 0; color: #eef2ff; font-size: 16px; line-height: 1.75; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+      .hero-button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 10px; padding: 0 18px; border: 1px solid transparent; border-radius: 8px; background: white; color: #3730a3; font-size: 13px; font-weight: 700; text-decoration: none; transition: transform 150ms ease, box-shadow 150ms ease; }
+      .hero-button:hover { transform: translateY(-2px); box-shadow: 0 8px 22px #11182738; }
+      .hero-button.secondary { border-color: #ffffff80; background: #ffffff12; color: white; }
+
+      .art-wrap { position: relative; display: grid; min-height: 330px; place-items: center; }
+      .art-frame { position: relative; width: min(100%, 440px); overflow: hidden; border: 1px solid #ffffff75; border-radius: 12px; background: #f8fbff; box-shadow: 0 26px 70px #18235759; transform: rotate(2deg); }
+      .art-top { display: flex; height: 42px; align-items: center; gap: 7px; padding: 0 15px; border-bottom: 1px solid #e5eaf4; background: white; }
+      .art-dot { width: 9px; height: 9px; border-radius: 50%; background: #fb7185; }
+      .art-dot:nth-child(2) { background: #fbbf24; }
+      .art-dot:nth-child(3) { background: #34d399; }
+      .art-address { flex: 1; max-width: 190px; height: 20px; margin-left: 13px; border-radius: 5px; background: #f1f5f9; }
+      .art-body { display: grid; grid-template-columns: 42px 1fr; min-height: 235px; }
+      .art-rail { display: flex; flex-direction: column; align-items: center; gap: 15px; padding-top: 19px; background: #eef2ff; }
+      .art-rail i { width: 15px; height: 15px; border-radius: 4px; background: #818cf8; }
+      .art-rail i:nth-child(2) { background: #f472b6; }
+      .art-rail i:nth-child(3) { background: #22d3ee; }
+      .art-rail i:nth-child(4) { background: #34d399; }
+      .code-view { padding: 21px 22px; color: #334155; font-family: Consolas, monospace; font-size: 12px; line-height: 2; }
+      .code-line { display: flex; gap: 14px; white-space: nowrap; }
+      .code-num { width: 12px; color: #94a3b8; text-align: right; }
+      .code-purple { color: #7c3aed; }
+      .code-blue { color: #2563eb; }
+      .code-pink { color: #db2777; }
+      .art-sticker { position: absolute; right: -8px; bottom: 10px; display: grid; width: 76px; height: 76px; place-items: center; border: 5px solid #ffffffd9; border-radius: 10px; background: #fbbf24; color: #713f12; font-size: 31px; box-shadow: 0 12px 28px #18235736; transform: rotate(-9deg); }
+      .hero-caption { position: absolute; left: 0; bottom: 0; padding: 9px 13px; border: 1px solid #ffffff55; border-radius: 8px; background: #0f172a35; color: white; font-size: 11px; font-weight: 600; }
+
+      .projects-section { padding: 78px 0 86px; background: linear-gradient(180deg, #f6f8ff, #ffffff 45%, #f8f7ff); }
+      .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 29px; }
+      .section-kicker { margin: 0 0 8px; color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+      .section-heading h2, .about-copy h2, .contact-card h2 { margin: 0; font-family: "Fraunces", Georgia, serif; font-size: 36px; font-weight: 500; line-height: 1.15; }
+      .section-note { max-width: 350px; margin: 0 0 3px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+      .project-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }
+      .project-card { display: flex; min-height: 254px; flex-direction: column; align-items: flex-start; padding: 21px; border: 1px solid #e6eaf3; border-radius: 8px; background: white; box-shadow: 0 7px 24px #1e293b0b; text-decoration: none; transition: transform 170ms ease, box-shadow 170ms ease, border-color 170ms ease; }
+      .project-card:hover { transform: translateY(-4px); border-color: #c7d2fe; box-shadow: 0 15px 30px #1e293b16; }
+      .project-card:focus-visible, .hero-button:focus-visible, .nav-github:focus-visible { outline: 3px solid #fbbf24; outline-offset: 3px; }
+      .project-card:nth-child(5n + 1) { background: linear-gradient(145deg, #fff 50%, #eff6ff); }
+      .project-card:nth-child(5n + 2) { background: linear-gradient(145deg, #fff 50%, #fdf2f8); }
+      .project-card:nth-child(5n + 3) { background: linear-gradient(145deg, #fff 50%, #f5f3ff); }
+      .project-card:nth-child(5n + 4) { background: linear-gradient(145deg, #fff 50%, #ecfeff); }
+      .project-card:nth-child(5n) { background: linear-gradient(145deg, #fff 50%, #ecfdf5); }
+      .card-top { display: flex; width: 100%; align-items: center; justify-content: space-between; }
+      .project-number { color: #64748b; font-size: 11px; font-weight: 700; }
+      .project-icon { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 8px; background: #dbeafe; color: #1d4ed8; font-size: 22px; }
+      .project-card:nth-child(5n + 2) .project-icon { background: #fce7f3; color: #be185d; }
+      .project-card:nth-child(5n + 3) .project-icon { background: #ede9fe; color: #6d28d9; }
+      .project-card:nth-child(5n + 4) .project-icon { background: #cffafe; color: #0e7490; }
+      .project-card:nth-child(5n) .project-icon { background: #d1fae5; color: #047857; }
+      .project-card h3 { margin: 17px 0 6px; font-family: "Fraunces", Georgia, serif; font-size: 22px; font-weight: 500; line-height: 1.2; }
+      .project-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+      .card-bottom { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 17px; }
+      .tech-badge { padding: 6px 9px; border-radius: 6px; background: #eef2ff; color: #4338ca; font-size: 10px; font-weight: 700; }
+      .view-link { color: #1d4ed8; font-size: 11px; font-weight: 700; white-space: nowrap; }
+      .view-link span { margin-left: 4px; color: #db2777; }
+
+      .about-band { padding: 54px 0; background: #0f172a; color: white; }
+      .about-grid { display: grid; grid-template-columns: 1fr 0.75fr; gap: 70px; align-items: center; }
+      .about-copy .section-kicker { color: #67e8f9; }
+      .about-copy p, .contact-card p { max-width: 600px; margin: 13px 0 0; color: #cbd5e1; font-size: 13px; line-height: 1.75; }
+      .contact-card { padding: 23px; border: 1px solid #334155; border-radius: 8px; background: #17233a; }
+      .contact-card h2 { font-size: 25px; }
+      .contact-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 17px; color: #a5b4fc; font-size: 12px; font-weight: 700; text-decoration: none; }
+      .contact-link:hover { color: white; }
+
+      .site-footer { padding: 19px 0; background: #0b1120; color: #aab5c7; font-size: 11px; }
+      .footer-row { display: flex; justify-content: space-between; gap: 18px; }
+      .footer-row strong { color: white; font-weight: 600; }
+
+      @media (max-width: 900px) {
+        .hero-grid { gap: 28px; }
+        h1 { font-size: 54px; }
+        .project-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .about-grid { gap: 35px; }
+      }
+
+      @media (max-width: 650px) {
+        .wrap { width: min(100% - 32px, 520px); }
+        .nav-row { min-height: 68px; flex-wrap: wrap; gap: 0 16px; padding: 13px 0; }
+        .brand { margin-right: auto; }
+        .nav-links { order: 3; width: 100%; justify-content: space-between; gap: 10px; padding-top: 13px; }
+        .nav-links a { font-size: 12px; }
+        .nav-github { padding: 8px 11px; }
+        .hero-grid { grid-template-columns: 1fr; gap: 28px; padding: 55px 0 62px; }
+        h1 { font-size: 46px; }
+        .hero-copy > p { font-size: 14px; }
+        .art-wrap { min-height: 265px; }
+        .art-frame { width: min(100% - 16px, 420px); }
+        .art-body { min-height: 195px; }
+        .code-view { padding: 15px 13px; font-size: 10px; }
+        .art-sticker { right: -3px; bottom: -2px; width: 61px; height: 61px; font-size: 25px; }
+        .projects-section { padding: 56px 0 62px; }
+        .section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+        .section-heading h2 { font-size: 31px; }
+        .project-list { grid-template-columns: 1fr; gap: 12px; }
+        .project-card { min-height: 224px; }
+        .about-grid { grid-template-columns: 1fr; gap: 25px; }
+        .footer-row { flex-direction: column; gap: 6px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" id="home">
+      <div class="wrap nav-row">
+        <a class="brand" href="#home">SANJEETHA<span>.</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="nav-github" href="https://github.com/sanjeetha0109-rgb/web-interface" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Ten projects · One collection</p>
+            <h1 id="page-title">My Web Projects</h1>
+            <p>A colorful collection of useful interfaces, experiments, and ideas built for the web.</p>
+            <div class="hero-actions">
+              <a class="hero-button" href="#projects">Explore projects <span aria-hidden="true">↓</span></a>
+              <a class="hero-button secondary" href="https://github.com/sanjeetha0109-rgb/web-interface" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="art-wrap" aria-hidden="true">
+            <div class="art-frame">
+              <div class="art-top"><i class="art-dot"></i><i class="art-dot"></i><i class="art-dot"></i><span class="art-address"></span></div>
+              <div class="art-body">
+                <div class="art-rail"><i></i><i></i><i></i><i></i></div>
+                <div class="code-view">
+                  <div class="code-line"><span class="code-num">01</span><span><span class="code-purple">const</span> projects = [</span></div>
+                  <div class="code-line"><span class="code-num">02</span><span>  <span class="code-blue">"ideas"</span>, <span class="code-pink">"design"</span>,</span></div>
+                  <div class="code-line"><span class="code-num">03</span><span>  <span class="code-blue">"code"</span>, <span class="code-pink">"curiosity"</span></span></div>
+                  <div class="code-line"><span class="code-num">04</span><span>];</span></div>
+                  <div class="code-line"><span class="code-num">05</span><span></span></div>
+                  <div class="code-line"><span class="code-num">06</span><span><span class="code-purple">build</span>(projects); <span class="code-blue">// repeat</span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="art-sticker">✦</div>
+            <span class="hero-caption">Designed with curiosity</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <div><p class="section-kicker">The collection</p><h2 id="projects-title">Things I’ve built</h2></div>
+            <p class="section-note">Ten independent projects, each with its own idea, interface, and little details.</p>
+          </div>
+          <div class="project-list">
+            <a class="project-card" href="/projects/project-1/">
+              <div class="card-top"><span class="project-number">01</span><span class="project-icon" aria-hidden="true">↕</span></div>
+              <h3>Counter App</h3><p>A simple interactive counter with a clear, focused interface.</p>
+              <div class="card-bottom"><span class="tech-badge">HTML · CSS · JavaScript</span><span class="view-link">View Project <span aria-hidden="true">→</span></span></div>
+            </a>
+            <a class="project-card" href="/projects/project-2/">
+              <div class="card-top"><span class="project-number">02</span><span class="project-icon" aria-hidden="true">♙</span></div>
+              <h3>Student Profile Card</h3><p>A compact profile page built around a student introduction.</p>
+              <div class="card-bottom"><span class="tech-badge">HTML · CSS · JavaScript</span><span class="view-link">View Project <span aria-hidden="true">→</span></span></div>
+            </a>
+            <a class="project-card" href="/projects/project-3/">
+              <div class="card-top"><span class="project-number">03</span><span class="project-icon" aria-hidden="true">✿</span></div>
+              <h3>Hobbies</h3><p>A personal collection of hobbies presented as a small React app.</p>
+              <div class="card-bottom"><span class="tech-badge">React · Vite</span><span class="view-link">View Project <span aria-hidden="true">→</span></span></div>
+            </a>
+            <a class="project-card" href="/projects/project-4/">
+              <div class="card-top"><span class="project-number">04</span><span class="project-icon" aria-hidden="true">▤</span></div>
+              <h3>Student Dashboard</h3><p>An at-a-glance view of student details, subjects, and academic progress.</p>
+              <div class="card-bottom"><span class="tech-badge">React · Vite</span><span class="view-link">View Project <span aria-hidden="true">→</span></span></div>
+            </a>
+            <a class="project-card" href="/projects/project-5/">
+              <div class="card-top"><span class="project-number">05</span><span class="project-icon" aria-hidden="true">✓</span></div>
+              <h3>Attendance Tracker</h3><p>Track attendance and see a quick summary of the group.</p>
+              <div class="card-bottom"><span class="tech-badge">React · Vite</span><span class="view-link">View Project <span aria-hidden="true">→</span></span></div>
+            </a>
+            <a class="project-card" href="/projects/project-6/">
+              <div class="card-top"><span class="project-number">06</span><span class="project-icon" aria-hidden="true">＋</span></div>
+              <h3>Calculator</h3><p>A pocket calculator for everyday arithmetic.</p>
+              <div class="card-bottom"><span class="tech-badge">React · Vite</span><span class="view-link">View Project <span aria-hidden="true">→</span></span></div>
+            </a>
+            <a class="project-card" href="/projects/project-7/">
+              <div class="card-top"><span class="project-number">07</span><span class="project-icon" aria-hidden="true">✧</span></div>
+              <h3>Personal Portfolio</h3><p>A personal site with home, about, and contact pages.</p>
+              <div class="card-bottom"><span class="tech-badge">React · Vite · Router</span><span class="view-link">View Project <span aria-hidden="true">→</span></span></div>
+            </a>
+            <a class="project-card" href="/projects/project-8/">
+              <div class="card-top"><span class="project-number">08</span><span class="project-icon" aria-hidden="true">▧</span></div>
+              <h3>Student Registration</h3><p>A student registration experience with a dedicated details view.</p>
+              <div class="card-bottom"><span class="tech-badge">React · Vite</span><span class="view-link">View Project <span aria-hidden="true">→</span></span></div>
+            </a>
+            <a class="project-card" href="/projects/project-9/">
+              <div class="card-top"><span class="project-number">09</span><span class="project-icon" aria-hidden="true">☑</span></div>
+              <h3>TaskBoard</h3><p>Organize tasks, add new work, and keep track of what is next.</p>
+              <div class="card-bottom"><span class="tech-badge">React · Vite · Router</span><span class="view-link">View Project <span aria-hidden="true">→</span></span></div>
+            </a>
+            <a class="project-card" href="/projects/project-10/">
+              <div class="card-top"><span class="project-number">10</span><span class="project-icon" aria-hidden="true">▥</span></div>
+              <h3>Student Report Card</h3><p>Browse students and open an individual report card.</p>
+              <div class="card-bottom"><span class="tech-badge">React · Vite · Router</span><span class="view-link">View Project <span aria-hidden="true">→</span></span></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-band" id="about">
+        <div class="wrap about-grid">
+          <div class="about-copy"><p class="section-kicker">About this collection</p><h2>Learning by making</h2><p>This portfolio brings together ten independent web projects, from small JavaScript tools to React applications. Each project keeps its own interface and purpose.</p></div>
+          <div class="contact-card" id="contact"><h2>Let’s connect</h2><p>Explore the source and follow the work on GitHub.</p><a class="contact-link" href="https://github.com/sanjeetha0109-rgb/web-interface" target="_blank" rel="noreferrer">Visit the repository <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="wrap footer-row"><strong>Built with ❤️ by Sanjeetha</strong><span>Ten projects · One collection</span></div></footer>
+  </body>
+</html>

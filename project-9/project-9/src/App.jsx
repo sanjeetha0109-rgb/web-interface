@@ -147,7 +147,7 @@ function App() {
 }
 
 export default App;*/
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
 import Home1 from "./pages1/Home1";
 import AddTask from "./pages1/AddTask";
 import Tasks from "./pages1/Tasks";
@@ -155,7 +155,7 @@ import About1 from "./pages1/About1";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <header>
         <h1>TaskBoard</h1>
 
@@ -175,7 +175,7 @@ function App() {
       </Routes>
 
       <footer>TaskBoard | Organize • Plan • Complete</footer>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

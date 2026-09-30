@@ -1,6 +1,63 @@
 import { useState } from "react";
 import "./Calculator.css";
 
+function evaluateExpression(expression) {
+  const normalized = expression.replace(/\s+/g, "");
+  const tokens = normalized.match(/\d*\.?\d+|[()+\-*/%]/g) ?? [];
+  let position = 0;
+
+  if (!normalized || tokens.join("") !== normalized) {
+    throw new Error("Invalid expression");
+  }
+
+  function parsePrimary() {
+    const token = tokens[position++];
+
+    if (token === "+") return parsePrimary();
+    if (token === "-") return -parsePrimary();
+    if (token === "(") {
+      const value = parseExpression();
+      if (tokens[position++] !== ")") throw new Error("Unclosed parenthesis");
+      return value;
+    }
+    if (/^(?:\d+\.?\d*|\.\d+)$/.test(token ?? "")) return Number(token);
+
+    throw new Error("Invalid expression");
+  }
+
+  function parseTerm() {
+    let value = parsePrimary();
+
+    while (["*", "/", "%"].includes(tokens[position])) {
+      const operator = tokens[position++];
+      const next = parsePrimary();
+      if (operator === "*") value *= next;
+      if (operator === "/") value /= next;
+      if (operator === "%") value %= next;
+    }
+
+    return value;
+  }
+
+  function parseExpression() {
+    let value = parseTerm();
+
+    while (["+", "-"].includes(tokens[position])) {
+      const operator = tokens[position++];
+      const next = parseTerm();
+      value = operator === "+" ? value + next : value - next;
+    }
+
+    return value;
+  }
+
+  const result = parseExpression();
+  if (position !== tokens.length || !Number.isFinite(result)) {
+    throw new Error("Invalid expression");
+  }
+  return result;
+}
+
 function Calculator() {
   const [input, setInput] = useState("");
 
@@ -20,7 +77,7 @@ function Calculator() {
 
   const calculate = () => {
     try {
-      setInput(eval(input).toString());
+      setInput(evaluateExpression(input).toString());
     } catch {
       setInput("Error");
     }
